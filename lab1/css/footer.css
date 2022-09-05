@@ -1,0 +1,249 @@
+.footer-line {
+  background-color: rgba(134, 126, 126, 0.2);
+  width: 1750px;
+  height: 3px;
+  position: relative;
+  top: 1400px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-line {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .footer-line {
+    width: 3200px;
+  }
+}
+
+.footer-h {
+  width: 425px;
+  height: 72px;
+  font-size: 40px;
+  float: left;
+  color: rgb(10, 35, 85);
+  font-weight: bold;
+  position: relative;
+  top: 600px;
+  left: 120px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-h {
+    position: relative;
+    left: 20px;
+    margin-left: 50vw;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .footer-h {
+    position: relative;
+    left: 500px;
+  }
+}
+
+.footer-p1 {
+  color: rgb(71, 83, 106);
+  font-size: 18px;
+  width: 584px;
+  height: 29px;
+  float: left;
+  position: relative;
+  top: 700px;
+  right: 305px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-p1 {
+    position: relative;
+    left: 100px;
+    top: 100vh;
+    margin-left: 40vw;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .footer-p1 {
+    position: relative;
+    left: 80px;
+  }
+}
+
+.footer-p2 {
+  font-size: 14px;
+  float: left;
+  color: rgba(12, 41, 97, 0.9);
+  width: 350px;
+  height: 70px;
+  position: relative;
+  right: 885px;
+  top: 830px;
+  padding-bottom: 40px;
+  line-height: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-p2 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .footer-p2 {
+    display: none;
+  }
+}
+
+.footer-learn-more-button {
+  width: 200px;
+  height: 60px;
+  position: relative;
+  left: 423px;
+  bottom: 120px;
+  margin-top: 50px;
+  background-color: rgba(215, 42, 227, 0.8);
+  border-radius: 50px;
+  font-size: 20px;
+  border: 0;
+  padding: 35px;
+  cursor: pointer;
+  color: #ffffff;
+  float: right;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-learn-more-button {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .footer-learn-more-button {
+    position: relative;
+    left: 1050px;
+  }
+}
+
+.footer-learn-more-link {
+  position: relative;
+  bottom: 12px;
+  text-decoration: 0;
+  color: #ffffff;
+}
+
+.footer-request-button {
+  width: 260px;
+  height: 70px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  font-size: 20px;
+  border: 0;
+  padding: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  color: rgb(10, 35, 85);
+  box-shadow: 0 7px 7px rgba(75, 93, 104, 0.2);
+  position: relative;
+  left: 923px;
+  bottom: 90px;
+  float: right;
+  padding-right: 40px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-request-button {
+    position: relative;
+    left: -250px;
+    top: 13vh;
+    width: 220px;
+    padding-right: 20px;
+    padding-left: 10px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .footer-request-button {
+    position: relative;
+    left: 1570px;
+  }
+}
+
+.footer-request-link {
+  text-decoration: 0;
+  color: rgb(10, 35, 85);
+  position: relative;
+  bottom: 5px;
+}
+
+.footer-request-link-arrow {
+  font-size: 40px;
+  color: #9c69e2;
+  float: right;
+  position: relative;
+  bottom: 20px;
+  left: 10px;
+  text-decoration: 0;
+}
+
+.footer-message-button {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 0;
+  background-color: rgba(214, 217, 223, 0.8);
+  cursor: pointer;
+  float: right;
+  position: relative;
+  top: 810px;
+  right: 65px;
+
+  animation: floating-y 3s ease-in-out infinite;
+  transition: background-color 1s ease-out;
+}
+
+.footer-message-button:hover {
+  background-color: rgb(250, 252, 252);
+}
+
+@media screen and (max-width: 768px) {
+  .footer-message-button {
+    position: relative;
+    top: 105vh;
+    float: left;
+    margin-left: 100px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .footer-message-button {
+    position: relative;
+    right: 80px;
+
+    animation: long-floating-y 3s ease-in-out infinite;
+  }
+}
+
+.footer-message-icon {
+  width: 36px;
+  height: 30px;
+  position: relative;
+  top: 0;
+  left: 13px;
+}
+
+.footer-message-circle {
+  height: 5px;
+  width: 5px;
+  float: right;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  top: 10px;
+  right: 18px;
+  margin: 1.5px;
+}
