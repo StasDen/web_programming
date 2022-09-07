@@ -1,0 +1,134 @@
+.nav-link {
+  text-decoration: 0;
+  color: rgb(10, 35, 85);
+  font-size: 18px;
+  position: relative;
+  left: 175px;
+
+  transition: color 0.5s linear;
+}
+
+.nav-link:hover {
+  font-weight: bold;
+}
+
+.nav-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #9c69e2;
+  position: relative;
+  left: 100px;
+  top: 55px;
+
+  animation: moving-down 2s ease-out infinite;
+}
+
+@media screen and (min-width: 2560px) {
+  .nav-circle {
+    animation: moving-down 2s ease-out 2;
+  }
+}
+
+.nav-rectangle {
+  width: 20px;
+  height: 35px;
+  border-radius: 20px;
+  display: inline-block;
+  background-color: #f063b8;
+  position: relative;
+  left: 105px;
+  top: 55px;
+
+  animation: moving-up 2s ease-out infinite;
+}
+
+@media screen and (min-width: 2560px) {
+  .nav-rectangle {
+    animation: moving-up 2s ease-out 2;
+  }
+}
+
+.nav-request-button {
+  width: 270px;
+  height: 80px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  font-size: 20px;
+  border: 0;
+  padding: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  color: rgb(10, 35, 85);
+  box-shadow: 0 5px 5px rgba(75, 93, 104, 0.1);
+  float: right;
+  position: relative;
+  right: 120px;
+  top: 20px;
+  padding-right: 40px;
+  text-align: center;
+}
+
+.nav-link-arrow {
+  font-size: 40px;
+  color: #9c69e2;
+  float: right;
+  position: relative;
+  bottom: 15px;
+  left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .desktop-topnav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .mobile-topnav {
+    display: none;
+  }
+}
+
+/* Hamburger menu */
+@media screen and (max-width: 768px) {
+  .mobile-topnav {
+    overflow: hidden;
+    background-color: rgb(219, 177, 222);
+    position: relative;
+    width: 150vw;
+    margin: 20px;
+  }
+
+  .mobile-topnav #myLinks {
+    display: none;
+  }
+
+  .mobile-topnav a {
+    color: #ffffff;
+    padding: 30px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+  }
+
+  .mobile-topnav a.icon {
+    background-color: rgb(181, 50, 247);
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .mobile-topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .active-part-hamb {
+    background-color: rgb(187, 145, 210);
+    color: white;
+    font-weight: bold;
+  }
+}

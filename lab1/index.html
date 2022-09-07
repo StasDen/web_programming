@@ -4,128 +4,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Data Warehouse</title>
   <link rel="stylesheet" href="css/styles.css">
+  <!-- Hamburger icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <p>
-    <span id="nav-circle"></span>
-    <span id="nav-rectangle"></span>
-    <button id="nav-request-button"><a href="#requestdemo" style="text-decoration: 0; color: rgb(10, 35, 85)">Request
-        Demo<span id="nav-link-arrow">→</span></a></button>
-  <nav>
-    <ul>
-      <li><a href="#about" class="nav-link" style="font-weight: bold">About</a></li>
-      <li><a href="#help" class="nav-link">Help</a></li>
-      <li><a href="#features" class="nav-link">Features<a></li>
-      <li><a href="#signup" class="nav-link">Signup</a></li>
-    </ul>
-  </nav>
+    <!-- Mobile nav menu -->
+  <div class="mobile-topnav">
+    <a href="#about" class="active-part-hamb">About</a>
+    <div id="myLinks">
+      <a href="#help">Help</a>
+      <a href="#features">Features</a>
+      <a href="#signup">Signup</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <!-- Desktop nav menu -->
+  <div class="desktop-topnav">
+    <span class="nav-circle"></span>
+    <span class="nav-rectangle"></span>
+    <button class="nav-request-button"><a href="#requestdemo" style="text-decoration: 0; color: rgb(10, 35, 85)">Request
+        Demo<span class="nav-link-arrow">→</span></a></button>
+    <nav>
+      <ul>
+        <li><a href="#about" class="nav-link" style="font-weight: bold">About</a></li>
+        <li><a href="#help" class="nav-link">Help</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#sighup" class="nav-link">Signup</a></li>
+      </ul>
+    </nav>
+  </div>
   </p>
-  <main>
-    <img src="img/main1.png" id="main-p1">
-    <header id="header-p1">Save your data<br />
-      storage here.</header>
-    <p id="p1-info">Data Warehouse is a data storage area that<br />
-      has been tested by security, so you can store<br />
-      your data here safely but not be afraid of<br />
-      being stolen by others.</p>
-    <p>
-      <button id="button-p1"><a href="#learnmore" id="button-p1-link">Learn more</a></button>
+
+  <header>
+    <main>
+      <img src="img/main1.png" class="p1-img">
+      <h1 class="header-p1">Save your data<br />
+        storage here.</h1>
+      <p class="p1-info">Data Warehouse is a data storage area that<br />
+        has been tested by security, so you can store<br />
+        your data here safely but not be afraid of<br />
+        being stolen by others.</p>
+      <p>
+        <button class="button-p1"><a href="#learnmore" class="button-p1-link">Learn more</a></button>
+      </p>
+    </main>
+    <section class="p2">
+      <img src="img/main2.svg" class="p2-img">
+      <span class="header-p2">We are a high-level data<br />
+        storage bank</span>
+      <p class="p2-information">The place to store various data that you can access at any<br />
+        time through the internet and where you can carry it.<br />
+        This very flexible area has a high level of security.<br />
+        To enter into your own data you must enter the password<br />
+        that you created when you registered in this Data<br />
+        Warehouse.</p>
+    </section>
+  </header>
+
+  <section>
+    <h2 class="features-header">Features</h2>
+    <p class="features-info">Some of the features and advantages that we provide for those of you<br />
+      who store data in this Data Warehouse.</p>
+    <span class="features-top-left-p">
+      <img src="img/features_top_left.png" class="features-top-left-img">
+      <span class="features-top-left-h">Search Data</span>
+      <img src="img/vector_decoration1.png" class="vector-decoration1-img">
+      <img src="img/ellipse_decoration1.png" class="ellipse-decoration1-img">
+      <span class="features-top-left-p-info">Don't worry if your data is very<br />
+        large, the Data Warehouse<br />
+        provides a search engine,<br />
+        which is useful for making it<br />
+        easier to find data effectively<br />
+        saving time.<br />
+        <a href="#featureslearnmore1" class="features-top-left-link">Learn more</a>
+        <span class="features-top-left-link-arrow">→</span>
+      </span>
+    </span>
+    <span class="features-top-right-p">
+      <img src="img/features_top_right.png" class="features-top-right-img">
+      <img src="img/vector_decoration2.png" class="vector-decoration2-img">
+      <span class="features-top-right-h">24 Hours Access</span>
+      <span class="features-top-right-p-info">Access is given 24 hours a full<br />
+        morning to night and meet<br />
+        again in the morning, giving<br />
+        you comfort when you need<br />
+        data when urgent.<br />
+        <a href="#featureslearnmore2" class="features-top-right-link">Learn more</a>
+        <span class="features-top-right-link-arrow">→</span>
+      </span>
+    </span>
+    <p class="features-bottom-left-p">
+      <img src="img/features_bottom_left.png" class="features-bottom-left-img">
+      <img src="img/ellipse_decoration2.png" class="ellipse-decoration2-img">
+      <span class="features-bottom-left-h">Print Out</span>
+      <span class="features-bottom-left-p-info">Print out service gives you<br />
+        convenience if someday you<br />
+        need print data, just edit it all<br />
+        and just print it.<br />
+        <a href="##featureslearnmore3" class="features-bottom-left-link">Learn more</a>
+        <span class="features-bottom-left-link-arrow">→</span>
+      </span>
     </p>
-  </main>
-  <section id="p2">
-    <img src="img/main2.svg" id="p2-img">
-    <span id="header-p2">We are a high-level data<br />
-      storage bank</span>
-    <p id="p2-information">The place to store various data that you can access at any<br />
-      time through the internet and where you can carry it.<br />
-      This very flexible area has a high level of security.<br />
-      To enter into your own data you must enter the password<br />
-      that you created when you registered in this Data<br />
-      Warehouse.</p>
+    <p class="features-bottom-right-p">
+      <img src="img/features_bottom_right.png" class="features-bottom-right-img">
+      <img src="img/vector_decoration3.png" class="vector-decoration3-img">
+      <img src="img/ellipse_decoration3.png" class="ellipse-decoration3-img">
+      <span class="features-bottom-right-h">Security Code</span>
+      <span class="features-bottom-right-p-info">Data Security is one of our<br />
+        best facilities. Allows for your<br />
+        files to be safer. The file can<br />
+        be secured with a code or<br />
+        password that you created,<br />
+        so only you can open the file.<br />
+        <a href="##featureslearnmore4" class="features-bottom-right-link">Learn more</a>
+        <span class="features-bottom-right-link-arrow">→</span>
+      </span>
+    </p>
   </section>
-  <p>
-  <h2 id="features-header">Features</h2>
-  <p id="features-info">Some of the features and advantages that we provide for those of you<br />
-    who store data in this Data Warehouse.</p>
-  </p>
-  <span id="features-top-left-p">
-    <img src="img/features_top_left.png" id="features-top-left-img">
-    <span id="features-top-left-h">Search Data</span>
-    <img src="img/vector_decoration1.png" id="vector-decoration1-img">
-    <img src="img/ellipse_decoration1.png" id="ellipse-decoration1-img">
-    <span id="features-top-left-p-info">Don't worry if your data is very<br />
-      large, the Data Warehouse<br />
-      provides a search engine,<br />
-      which is useful for making it<br />
-      easier to find data effectively<br />
-      saving time.<br />
-      <a href="#featureslearnmore1" id="features-top-left-link">Learn more</a>
-      <span id="features-top-left-link-arrow">→</span>
-    </span>
-  </span>
-  <span id="features-top-right-p">
-    <img src="img/features_top_right.png" id="features-top-right-img">
-    <img src="img/vector_decoration2.png" id="vector-decoration2-img">
-    <span id="features-top-right-h">24 Hours Access</span>
-    <span id="features-top-right-p-info">Access is given 24 hours a full<br />
-      morning to night and meet<br />
-      again in the morning, giving<br />
-      you comfort when you need<br />
-      data when urgent.<br />
-      <a href="#featureslearnmore2" id="features-top-right-link">Learn more</a>
-      <span id="features-top-right-link-arrow">→</span>
-    </span>
-  </span>
-  <p id="features-bottom-left-p">
-    <img src="img/features_bottom_left.png" id="features-bottom-left-img">
-    <img src="img/ellipse_decoration2.png" id="ellipse-decoration2-img">
-    <span id="features-bottom-left-h">Print Out</span>
-    <span id="features-bottom-left-p-info">Print out service gives you<br />
-      convenience if someday you<br />
-      need print data, just edit it all<br />
-      and just print it.<br />
-      <a href="##featureslearnmore3" id="features-bottom-left-link">Learn more</a>
-      <span id="features-bottom-left-link-arrow">→</span>
-    </span>
-  </p>
-  <p id="features-bottom-right-p">
-    <img src="img/features_bottom_right.png" id="features-bottom-right-img">
-    <img src="img/vector_decoration3.png" id="vector-decoration3-img">
-    <img src="img/ellipse_decoration3.png" id="ellipse-decoration3-img">
-    <span id="features-bottom-right-h">Security Code</span>
-    <span id="features-bottom-right-p-info">Data Security is one of our<br />
-      best facilities. Allows for your<br />
-      files to be safer. The file can<br />
-      be secured with a code or<br />
-      password that you created,<br />
-      so only you can open the file.<br />
-      <a href="##featureslearnmore4" id="features-bottom-right-link">Learn more</a>
-      <span id="features-bottom-right-link-arrow">→</span>
-    </span>
-  </p>
+
   <footer>
-    <p id="footer-line"></p>
-    <h3 id="footer-h">Try for free!</h3>
-    <p id="footer-p1">Get limited 1 week free try our features!
-      <button id="footer-learn-more-button"><a href="#footerlearnmore" id="footer-learn-more-link">Learn
+    <p class="footer-line"></p>
+    <h3 class="footer-h">Try for free!</h3>
+    <p class="footer-p1">Get limited 1 week free try our features!
+      <button class="footer-learn-more-button"><a href="#footerlearnmore" class="footer-learn-more-link">Learn
           more</a></button>
-      <button id="footer-request-button"><a href="#footerrequest" id="footer-request-link">Request Demo</a>
-        <span id="footer-request-link-arrow">→</span></button>
+      <button class="footer-request-button"><a href="#footerrequest" class="footer-request-link">Request Demo</a>
+        <span class="footer-request-link-arrow">→</span></button>
     </p>
     <p>
-      <span id="footer-p2">© Datawarehouse™, 2020. All rights reserved. Company Registration Number:
+      <span class="footer-p2">© Datawarehouse™, 2020. All rights reserved. Company Registration Number:
         21479524.</span>
-      <button id="footer-message-button"><img src="img/message_icon.png" id="footer-message-icon">
-        <span id="footer-message-circle"></span>
-        <span id="footer-message-circle"></span>
-        <span id="footer-message-circle"></span>
+      <button class="footer-message-button"><img src="img/message_icon.png" class="footer-message-icon">
+        <span class="footer-message-circle"></span>
+        <span class="footer-message-circle"></span>
+        <span class="footer-message-circle"></span>
       </button>
     </p>
   </footer>
+
+  <script>
+    // Hamburger menu func
+    function toggleMenu() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+  </script>
+
 </body>
 
 </html>
