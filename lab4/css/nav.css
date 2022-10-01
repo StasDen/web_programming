@@ -1,0 +1,14 @@
+.top-nav-list {
+  background-color: rgb(113, 214, 214);
+}
+
+.top-nav-list li {
+  display: inline-block;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.top-nav-list li > a {
+  text-decoration: 0;
+  color: white;
+}

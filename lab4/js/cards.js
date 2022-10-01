@@ -1,46 +1,17 @@
-import {
-  addCardToPage,
-  clearInputs,
-  renderCardList,
-  getInputValues,
-  addCostToPage,
-} from "./dom_util.js";
+import { renderCardList, addCostToPage, addCardToPage } from "./dom_util.js";
 
-const submitButton = document.getElementById("submit-button");
 const findButton = document.getElementById("find-button");
 const cancelButton = document.getElementById("cancel-button");
-const findInput = document.getElementById("find-input");
 const sortButton = document.getElementById("sort-button");
 const countButton = document.getElementById("count-button");
+const findInput = document.getElementById("find-input");
+const cardsHeader = document.getElementById("cards-h");
 
 // Every obj will be here
 let hamsters = [];
 
-const addCard = ({ title, desc, cost }) => {
-  let generatedId = uuid.v1(); // Unique value
-
-  const newObj = {
-    id: generatedId,
-    title,
-    desc,
-    cost,
-  };
-
-  hamsters.push(newObj);
-
-  addCardToPage(newObj);
-};
-
-submitButton.addEventListener("click", (event) => {
-  event.preventDefault(); // Prevent default reload of the page
-
-  // Pulling only properties of obj
-  const { title, description, cost } = getInputValues();
-
-  clearInputs();
-
-  addCard({ title, desc: description, cost });
-});
+// Counter
+let c = 0;
 
 findButton.addEventListener("click", (event) => {
   event.preventDefault();
@@ -63,7 +34,6 @@ cancelButton.addEventListener("click", (event) => {
 sortButton.addEventListener("click", (event) => {
   event.preventDefault();
 
-  // Sorting arr by card title
   const sortedHamsters = hamsters.sort((a, b) => {
     const la = a.title.toLowerCase();
     const lb = b.title.toLowerCase();
@@ -98,6 +68,17 @@ countButton.addEventListener("click", (event) => {
 
   const totalCost = hamstersCost.reduce(getSum, 0);
   addCostToPage(totalCost);
+});
+
+cardsHeader.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  const hamster = localStorage.getItem(c);
+  const hamsterObj = JSON.parse(hamster);
+
+  hamsters.push(hamsterObj);
+  addCardToPage(hamsterObj);
+  c++;
 });
 
 // Main code

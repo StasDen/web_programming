@@ -1,0 +1,17 @@
+header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+input {
+  display: block;
+}
+
+button > a {
+  text-decoration: 0;
+  color: white;
+}
+
+div > button {
+  margin-bottom: 20px;
+}
