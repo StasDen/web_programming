@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import Home from "../Home/Home";
 import TopNavigationWrapper from "./Navigation.styled";
+import Catalog from "../Catalog/Catalog";
 
 // Top nav
 const Navigation = () => {
@@ -45,7 +46,7 @@ const Navigation = () => {
       </TopNavigationWrapper>
 
       <Routes>
-        <Route path="/catalog" />
+        <Route path="/catalog" element={<Catalog />} />
         <Route path="/cart" />
         <Route path="/home" element={<Home />} />
       </Routes>

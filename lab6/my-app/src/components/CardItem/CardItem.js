@@ -11,8 +11,10 @@ const CardItem = ({ title, text, price, imgSrc }) => {
   return (
     <Card
       hoverable
-      style={{ width: 300, height: 560, borderRadius: 20 }}
-      cover={<img style={{ borderRadius: 20 }} alt="clothes" src={imgSrc} />}
+      style={{ width: 360, height: 640, borderRadius: 20, overflow: "hidden" }}
+      cover={
+        <img style={{ height: 400, width: 360 }} alt="clothes" src={imgSrc} />
+      }
     >
       <Meta title={title} description={text} />
       <p style={{ marginTop: 16 }}>From ${price}</p>

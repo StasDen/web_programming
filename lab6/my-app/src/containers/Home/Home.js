@@ -1,28 +1,28 @@
 import React from "react";
 import CardItem from "../../components/CardItem/CardItem";
 import { StyledHeader, StyledCards, StyledLogo } from "./Home.styled";
-import Button from "../../components/Button/Button";
+import MoreButton from "../../components/Button/Button";
 import { GitlabOutlined } from "@ant-design/icons";
 
 // Images
-import dressImg from "../../icons/dress.jpg";
-import skirtImg from "../../icons/skirt.webp";
-import shirtImg from "../../icons/shirt.webp";
-import headerImg from "../../icons/header.jpg";
+import dressImg from "../../icons/home/dress.jpg";
+import skirtImg from "../../icons/home/skirt.webp";
+import shirtImg from "../../icons/home/shirt.webp";
+import headerImg from "../../icons/home/header.jpg";
 
 // Fake api
 const data = [
+  {
+    title: "Skirts",
+    text: "Little fashionable things",
+    image: skirtImg,
+    price: 100,
+  },
   {
     title: "Dresses",
     text: "Good new dresses",
     image: dressImg,
     price: 200,
-  },
-  {
-    title: "Skirts",
-    text: "Fashionable things in your wardrobe",
-    image: skirtImg,
-    price: 100,
   },
   {
     title: "Shirts",
@@ -80,7 +80,7 @@ const Home = () => {
       </section>
 
       <section>
-        <Button />
+        <MoreButton />
       </section>
     </div>
   );

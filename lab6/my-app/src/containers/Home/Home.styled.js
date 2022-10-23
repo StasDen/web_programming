@@ -6,7 +6,7 @@ export const StyledHeader = styled.div`
   border-radius: 20px;
   width: 1000px;
   height: 560px;
-  margin-left: 240px;
+  margin: 0 0 200px 240px;
 
   h1 {
     font-weight: bold;
@@ -22,11 +22,14 @@ export const StyledHeader = styled.div`
 `;
 
 export const StyledCards = styled.div`
-  margin: 160px 0 0 112px;
+  margin: 100px 0 0 32px;
 
   li {
     display: inline-block;
-    margin: 0 48px 0 48px;
+    margin: 0 48px 40px 48px;
+  }
+  .dresses-ul {
+    margin-left: 28px;
   }
 `;
 

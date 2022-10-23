@@ -1,14 +1,14 @@
 import React from "react";
-import StyledButton from "./Button.styled";
+import { StyledButton } from "./Button.styled";
 
-const Button = () => {
+const MoreButton = () => {
   return (
     <StyledButton>
       <button>
-        <a href="#more">View more</a>
+        <a href="/catalog">View more</a>
       </button>
     </StyledButton>
   );
 };
 
-export default Button;
+export default MoreButton;
