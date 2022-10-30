@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.div`
-  margin-top: 100px;
+  margin-top: 280px;
 
   div {
     margin-left: 20px;
@@ -23,8 +23,8 @@ export const ShareButtonsWrapper = styled.div`
 
   button {
     margin: 0 10px 0 10px;
-    cursor: pointer;
     border-radius: 50%;
     border: 1px solid teal;
+    cursor: pointer;
   }
 `;

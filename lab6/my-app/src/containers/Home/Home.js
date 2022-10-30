@@ -1,34 +1,33 @@
 import React from "react";
-import CardItem from "../../components/CardItem/CardItem";
-import { StyledHeader, StyledCards, StyledLogo } from "./Home.styled";
-import Button from "../../components/Button/Button";
 import { GitlabOutlined } from "@ant-design/icons";
+import HomeCardItem from "../../components/CardItem/HomeCardItem";
+import { StyledHeader, StyledCards, StyledLogo } from "./Home.styled";
+import MoreButton from "../../components/Button/MoreButton";
 
-// Images
-import dressImg from "../../icons/dress.jpg";
-import skirtImg from "../../icons/skirt.webp";
-import shirtImg from "../../icons/shirt.webp";
-import headerImg from "../../icons/header.jpg";
+import dressImg from "../../icons/home/dress.jpg";
+import skirtImg from "../../icons/home/skirt.webp";
+import shirtImg from "../../icons/home/shirt.webp";
+import headerImg from "../../icons/home/header.jpg";
 
 // Fake api
-const data = [
+const homeClothes = [
+  {
+    title: "Skirts",
+    text: "Little fashionable things",
+    image: skirtImg,
+    price: 25,
+  },
   {
     title: "Dresses",
     text: "Good new dresses",
     image: dressImg,
-    price: 200,
-  },
-  {
-    title: "Skirts",
-    text: "Fashionable things in your wardrobe",
-    image: skirtImg,
-    price: 100,
+    price: 20,
   },
   {
     title: "Shirts",
     text: "Modern style shirts",
     image: shirtImg,
-    price: 80,
+    price: 12,
   },
 ];
 
@@ -64,9 +63,9 @@ const Home = () => {
       <section>
         <StyledCards>
           <ul>
-            {data.map(({ title, text, price, image }, indx) => (
+            {homeClothes.map(({ title, text, price, image }, indx) => (
               <li key={indx}>
-                <CardItem
+                <HomeCardItem
                   title={title}
                   text={text}
                   price={price}
@@ -80,7 +79,7 @@ const Home = () => {
       </section>
 
       <section>
-        <Button />
+        <MoreButton />
       </section>
     </div>
   );
