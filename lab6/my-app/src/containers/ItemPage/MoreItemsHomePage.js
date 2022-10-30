@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { GitlabOutlined } from "@ant-design/icons";
 import HomeCardItem from "../../components/CardItem/HomeCardItem";
-import { StyledHeader, StyledCards, StyledLogo } from "./Home.styled";
+import { StyledHeader, StyledCards, StyledLogo } from "../Home/Home.styled";
 import MoreButton from "../../components/Button/MoreButton";
 
 import dressImg from "../../icons/home/dress.jpg";
 import skirtImg from "../../icons/home/skirt.webp";
 import shirtImg from "../../icons/home/shirt.webp";
+import hatImg from "../../icons/more/hat.jpg";
+import coatImg from "../../icons/more/coat.webp";
+import jeansImg from "../../icons/more/jeans.png";
 import headerImg from "../../icons/home/header.jpg";
 
 // Fake api
@@ -31,10 +34,28 @@ const homeClothes = [
   },
 ];
 
-const Home = () => {
-  // todo: implement useState()
-  // const[items, moreItems] = useState()
+const moreHomeClothes = [
+  {
+    title: "Hats",
+    text: "Every style type",
+    image: hatImg,
+    price: 10,
+  },
+  {
+    title: "Coats",
+    text: "Coat on any occasion",
+    image: coatImg,
+    price: 50,
+  },
+  {
+    title: "Jeans",
+    text: "Casual and not only jeans",
+    image: jeansImg,
+    price: 30,
+  },
+];
 
+const MoreItemsHomePage = () => {
   return (
     <div>
       <picture>
@@ -78,6 +99,20 @@ const Home = () => {
               </li>
             ))}
           </ul>
+
+          <ul>
+            {moreHomeClothes.map(({ title, text, price, image }, indx) => (
+              <li key={indx}>
+                <HomeCardItem
+                  title={title}
+                  text={text}
+                  price={price}
+                  imgSrc={image}
+                  id={indx}
+                />
+              </li>
+            ))}
+          </ul>
         </StyledCards>
       </section>
 
@@ -88,4 +123,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default MoreItemsHomePage;

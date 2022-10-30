@@ -4,6 +4,8 @@ import Home from "../Home/Home";
 import TopNavigationWrapper from "./Navigation.styled";
 import Catalog from "../Catalog/Catalog";
 
+import MoreItemsHomePage from "../ItemPage/MoreItemsHomePage";
+
 // Top nav
 const Navigation = () => {
   return (
@@ -41,6 +43,16 @@ const Navigation = () => {
                 Cart
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/more"
+                style={({ isActive }) => ({
+                  fontWeight: isActive ? "bold" : "normal",
+                })}
+              >
+                More
+              </NavLink>
+            </li>
           </ul>
         </div>
       </TopNavigationWrapper>
@@ -49,6 +61,7 @@ const Navigation = () => {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/cart" />
         <Route path="/home" element={<Home />} />
+        <Route path="/more" element={<MoreItemsHomePage />} />
         <Route path="/" />
       </Routes>
     </BrowserRouter>
