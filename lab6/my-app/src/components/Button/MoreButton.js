@@ -1,13 +1,13 @@
 import React from "react";
-import { StyledButton } from "./Button.styled";
+import { StyledMoreButton } from "./Button.styled";
 
 const MoreButton = () => {
   return (
-    <StyledButton>
+    <StyledMoreButton>
       <button>
         <a href="/catalog">View more</a>
       </button>
-    </StyledButton>
+    </StyledMoreButton>
   );
 };
 

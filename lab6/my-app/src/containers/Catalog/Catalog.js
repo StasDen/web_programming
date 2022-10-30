@@ -1,16 +1,15 @@
 import React from "react";
+import CatalogCardItem from "../../components/CardItem/CatalogCardItem";
+import { StyledCards, StyledLogo } from "../Home/Home.styled";
+import { GitlabOutlined } from "@ant-design/icons";
+import { dresses, skirts, shirts } from "./CatalogApi";
+import BackToTopButton from "../../components/Button/BackToTopButton";
+import SearchComp from "../../components/Search/Search";
 import {
   StyledCatalogHeader,
   StyledSubHeader,
   StyledSearch,
 } from "./Catalog.styled";
-import CatalogCardItem from "../../components/CardItem/CatalogCardItem";
-import { StyledCards } from "../Home/Home.styled";
-import { GitlabOutlined } from "@ant-design/icons";
-import { StyledLogo } from "../Home/Home.styled";
-import { dresses, skirts, shirts } from "./CatalogApi";
-import ScrollButton from "../../components/Button/BackToTopButton";
-import SearchComp from "../../components/Search/Search";
 
 const Catalog = () => {
   return (
@@ -24,12 +23,11 @@ const Catalog = () => {
       <header>
         <StyledCatalogHeader>
           <h1>Halloween sale</h1>
-          <p>25% off on all dresses!</p>
+          <p>20% off on all clothes</p>
         </StyledCatalogHeader>
       </header>
 
       <StyledSearch>
-        <h2>Find your item!</h2>
         <SearchComp />
       </StyledSearch>
 
@@ -38,14 +36,13 @@ const Catalog = () => {
         style={{
           backgroundColor: "AntiqueWhite",
           padding: 60,
-          marginBottom: 200,
         }}
       >
         <StyledSubHeader style={{ color: "LightCoral" }}>
           Dresses
         </StyledSubHeader>
         <StyledCards>
-          <ul className="dresses-ul">
+          <ul>
             {dresses.map(({ title, text, price, image }, indx) => (
               <li key={indx}>
                 <CatalogCardItem
@@ -62,12 +59,10 @@ const Catalog = () => {
       </div>
 
       {/* Skirts */}
-      <div
-        style={{ backgroundColor: "thistle", padding: 60, marginBottom: 200 }}
-      >
+      <div style={{ backgroundColor: "thistle", padding: 60 }}>
         <StyledSubHeader style={{ color: "RosyBrown" }}>Skirts</StyledSubHeader>
         <StyledCards>
-          <ul className="dresses-ul">
+          <ul>
             {skirts.map(({ title, text, price, image }, indx) => (
               <li key={indx}>
                 <CatalogCardItem
@@ -75,7 +70,7 @@ const Catalog = () => {
                   text={text}
                   price={price}
                   imgSrc={image}
-                  id={indx} // Adding id for better performance
+                  id={indx}
                 />
               </li>
             ))}
@@ -84,12 +79,12 @@ const Catalog = () => {
       </div>
 
       {/* Shirts */}
-      <div style={{ backgroundColor: "plum", padding: 60, marginBottom: 200 }}>
+      <div style={{ backgroundColor: "plum", padding: 60 }}>
         <StyledSubHeader style={{ color: "MediumOrchid" }}>
           Shirts
         </StyledSubHeader>
         <StyledCards>
-          <ul className="dresses-ul">
+          <ul>
             {shirts.map(({ title, text, price, image }, indx) => (
               <li key={indx}>
                 <CatalogCardItem
@@ -97,7 +92,7 @@ const Catalog = () => {
                   text={text}
                   price={price}
                   imgSrc={image}
-                  id={indx} // Adding id for better performance
+                  id={indx}
                 />
               </li>
             ))}
@@ -106,7 +101,7 @@ const Catalog = () => {
       </div>
 
       <section>
-        <ScrollButton />
+        <BackToTopButton />
       </section>
     </div>
   );

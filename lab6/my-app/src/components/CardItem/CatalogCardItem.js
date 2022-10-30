@@ -1,8 +1,6 @@
 import React from "react";
 import { Card, Button } from "antd";
-
-// antd styles
-import "antd/dist/antd.min.css";
+import "antd/dist/antd.min.css"; // antd styles
 
 const CatalogCardItem = ({ title, text, price, imgSrc }) => {
   // Using Card.Meta for more flexible content

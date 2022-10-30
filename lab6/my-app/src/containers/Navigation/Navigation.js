@@ -49,6 +49,7 @@ const Navigation = () => {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/cart" />
         <Route path="/home" element={<Home />} />
+        <Route path="/" />
       </Routes>
     </BrowserRouter>
   );

@@ -8,29 +8,43 @@ const { Option } = Select;
 const SearchComp = () => {
   return (
     <div>
-      <h3>Filter</h3>
-      <div>
-        <StyledOptions>
+      <StyledOptions>
+        <h3>Filter by</h3>
+        <span>
           <Select style={{ width: 160 }}>
             <Option value="price">Price</Option>
             <Option value="type">Clothes type</Option>
             <Option value="maker">Maker</Option>
           </Select>
-        </StyledOptions>
-        <Button style={{ marginTop: 4 }}>Apply</Button>
-      </div>
+        </span>
+        <span>
+          <Select style={{ width: 160 }}>
+            <Option value="price">Price</Option>
+            <Option value="type">Clothes type</Option>
+            <Option value="maker">Maker</Option>
+          </Select>
+        </span>
+        <span>
+          <Select style={{ width: 160 }}>
+            <Option value="price">Price</Option>
+            <Option value="type">Clothes type</Option>
+            <Option value="maker">Maker</Option>
+          </Select>
+        </span>
+        <Button style={{ marginTop: 12 }}>Apply</Button>
+      </StyledOptions>
 
-      <h3>Search</h3>
-      <div>
-        <StyledSearchBar>
+      <StyledSearchBar>
+        <h3>Search</h3>
+        <span>
           <Search
-            placeholder="Dress, skirt"
+            placeholder="GENERIC, HANES"
             size="large"
             allowClear
             enterButton
           />
-        </StyledSearchBar>
-      </div>
+        </span>
+      </StyledSearchBar>
     </div>
   );
 };

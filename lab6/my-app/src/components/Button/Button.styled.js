@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledButton = styled.div`
+export const StyledMoreButton = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 120px;
@@ -13,7 +13,7 @@ export const StyledButton = styled.div`
   }
 `;
 
-export const BackToTopButton = styled.div`
+export const StyledBackToTopButton = styled.div`
   position: fixed;
   width: 100%;
   left: 48.2%;

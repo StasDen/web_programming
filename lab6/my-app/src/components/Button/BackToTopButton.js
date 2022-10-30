@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaArrowCircleUp } from "react-icons/fa";
-import { BackToTopButton } from "./Button.styled";
+import { StyledBackToTopButton } from "./Button.styled";
 
-const ScrollButton = () => {
+const BackToTopButton = () => {
   const [visible, setVisible] = useState(false);
 
   const toggleVisible = () => {
@@ -25,13 +25,13 @@ const ScrollButton = () => {
   window.addEventListener("scroll", toggleVisible);
 
   return (
-    <BackToTopButton>
+    <StyledBackToTopButton>
       <FaArrowCircleUp
         onClick={scrollToTop}
         style={{ display: visible ? "inline" : "none" }}
       />
-    </BackToTopButton>
+    </StyledBackToTopButton>
   );
 };
 
-export default ScrollButton;
+export default BackToTopButton;

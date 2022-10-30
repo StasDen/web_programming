@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledCatalogHeader = styled.div`
   background-color: khaki;
-  margin-bottom: 120px;
+  margin-bottom: 160px;
   padding: 20px;
   color: DarkGoldenRod;
   text-align: center;
@@ -20,13 +20,14 @@ export const StyledSubHeader = styled.h2`
 `;
 
 export const StyledSearch = styled.div`
-  background-color: LightSteelBlue;
-  padding: 40px;
-  margin-bottom: 40px;
+  background-color: PowderBlue;
+  padding: 60px;
+  border: 1px solid SteelBlue;
 
   h2 {
     font-size: 32px;
-    color: white;
+    font-weight: bold;
+    margin-bottom: 60px;
   }
   h3 {
     margin-top: 20px;

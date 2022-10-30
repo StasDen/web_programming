@@ -24,12 +24,12 @@ export const StyledHeader = styled.div`
 export const StyledCards = styled.div`
   margin: 100px 0 0 32px;
 
+  ul {
+    margin-left: 28px;
+  }
   li {
     display: inline-block;
     margin: 0 48px 40px 48px;
-  }
-  .dresses-ul {
-    margin-left: 28px;
   }
 `;
 
