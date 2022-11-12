@@ -6,11 +6,12 @@ export const StyledFooter = styled.div`
   div {
     margin-left: 20px;
   }
+
   .all-rights-res-p {
     text-align: center;
     padding: 0 20px 40px 44px;
     font-size: 16px;
-    color: grey;
+    color: gray;
   }
 `;
 

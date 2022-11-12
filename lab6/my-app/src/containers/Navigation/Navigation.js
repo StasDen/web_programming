@@ -3,8 +3,12 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import Home from "../Home/Home";
 import TopNavigationWrapper from "./Navigation.styled";
 import Catalog from "../Catalog/Catalog";
-
-import MoreItemsHomePage from "../ItemPage/MoreItemsHomePage";
+import {
+  DokotooViewMorePage,
+  MoleraniViewMorePage,
+  BelongsciViewMorePage,
+  ElescatViewMorePage,
+} from "../ItemPage/ViewMoreItemPage";
 
 // Top nav
 const Navigation = () => {
@@ -43,25 +47,18 @@ const Navigation = () => {
                 Cart
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/more"
-                style={({ isActive }) => ({
-                  fontWeight: isActive ? "bold" : "normal",
-                })}
-              >
-                More
-              </NavLink>
-            </li>
           </ul>
         </div>
       </TopNavigationWrapper>
 
       <Routes>
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/cart" />
         <Route path="/home" element={<Home />} />
-        <Route path="/more" element={<MoreItemsHomePage />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/catalog/dokotoo" element={<DokotooViewMorePage />} />
+        <Route path="/catalog/molerani" element={<MoleraniViewMorePage />} />
+        <Route path="/catalog/belongsci" element={<BelongsciViewMorePage />} />
+        <Route path="/catalog/elescat" element={<ElescatViewMorePage />} />
+        <Route path="/cart" />
         <Route path="/" />
       </Routes>
     </BrowserRouter>
