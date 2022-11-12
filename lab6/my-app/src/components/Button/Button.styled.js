@@ -8,7 +8,7 @@ export const StyledMoreButton = styled.div`
 
   button {
     border-radius: 20px;
-    border: 1px solid CornFlowerBlue;
+    border: 1px solid cornFlowerBlue;
     padding: 12px;
   }
 `;
@@ -18,7 +18,7 @@ export const StyledBackToTopButton = styled.div`
   width: 100%;
   left: 48.2%;
   bottom: 40px;
-  color: SteelBlue;
+  color: steelBlue;
   opacity: 0.7;
   font-size: 40px;
   z-index: 1;

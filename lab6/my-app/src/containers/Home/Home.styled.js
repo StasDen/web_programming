@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const StyledHeader = styled.div`
+export const StyledMain = styled.div`
   font-size: 20px;
-  background-color: AliceBlue;
+  background-color: aliceBlue;
   border-radius: 20px;
   width: 1000px;
   height: 560px;
@@ -12,6 +12,7 @@ export const StyledHeader = styled.div`
     font-weight: bold;
     padding-top: 30px;
   }
+
   img {
     width: 400px;
     padding: 40px;
@@ -27,6 +28,7 @@ export const StyledCards = styled.div`
   ul {
     margin-left: 28px;
   }
+
   li {
     display: inline-block;
     margin: 0 48px 40px 48px;

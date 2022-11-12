@@ -1,8 +1,6 @@
 import React from "react";
 import { StyledLogo } from "../Home/Home.styled";
 import { StyledFooter, ShareButtonsWrapper } from "./Footer.styled";
-
-// Antd icons
 import {
   GitlabOutlined,
   FacebookOutlined,
@@ -19,7 +17,7 @@ const Footer = () => {
         <h2>
           <i>Clothed</i>
         </h2>
-        <p>Made in Ukraine</p>
+        <p>Ukraine</p>
         <p>E-mail: clothed@gmail.com</p>
         <p>Contact: +380 73 046 9804</p>
       </div>
