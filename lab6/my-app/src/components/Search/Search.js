@@ -1,52 +1,65 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
+import { useParams } from "react-router-dom";
 import { Input, Button } from "antd";
 import { StyledSearchBar, StyledMain } from "./Search.styled";
 import { StyledCards } from "../../containers/Home/Home.styled";
 import CatalogCardItem from "../CardItem/CatalogCardItem";
+import axios from "axios";
 
-import data from "../../containers/Catalog/CatalogApi";
+export const api = axios.create({
+  baseURL: "http://localhost:9000/api/catalog",
+});
+
+// Func to use 'useParams()' in class(not available by default)
+export function withParams(Component) {
+  return (props) => <Component {...props} params={useParams()} />;
+}
 
 const { Search } = Input;
 
-const SearchComp = () => {
-  // =================== Search bar ===================
-  const [search, setSearch] = useState("");
+class SearchCompClass extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dresses: [],
+      search: "",
+      loading: true,
+    };
+  }
 
-  const searchText = (event) => {
-    setSearch(event.target.value);
-  };
+  componentDidMount() {
+    api.get("/").then((res) => {
+      this.setState({ dresses: res.data });
+    });
+  }
 
-  let dataSearch = data.filter((item) => {
-    return Object.keys(item).some((key) =>
-      item[key]
-        .toString()
-        .toLowerCase()
-        .includes(search.toString().toLowerCase())
-    );
-  });
+  searchText(event) {
+    this.setState({ search: event.target.value });
+  }
 
-  // =================== Filter ===================
-  const [items, setItems] = useState(data);
+  filterItems(menuItem) {
+    api.get(`/category/${menuItem}`).then((res) => {
+      this.setState({ dresses: res.data });
+    });
+  }
 
-  // Using spread to display only one val
-  const categoryItems = [...new Set(data.map((item) => item.category))];
-  const relPriceItems = [...new Set(data.map((item) => item.relPrice))];
-  const countryItems = [...new Set(data.map((item) => item.country))];
-
-  // Filter buttons
-  const Buttons = ({ menuItems }) => {
+  FilterButtons = (menuItems) => {
     return (
       <div style={{ marginBottom: 60 }}>
-        {menuItems.map((Item, indx) => {
+        {menuItems?.map((Item, indx) => {
           return (
-            <Button key={indx} onClick={() => filterItems(Item)}>
+            <Button key={indx} onClick={() => this.filterItems(Item)}>
               {Item}
             </Button>
           );
         })}
         <Button
           type="primary"
-          onClick={() => setItems(data)}
+          onClick={() =>
+            api.get("/").then((res) => {
+              this.setState({ dresses: res.data });
+            })
+          }
           style={{ marginTop: 20, display: "block" }}
         >
           All
@@ -55,61 +68,72 @@ const SearchComp = () => {
     );
   };
 
-  // Filter func
-  const filterItems = (menuItem) => {
-    const newItem = data.filter((newItem) => {
-      return (
-        newItem.relPrice === menuItem ||
-        newItem.category === menuItem ||
-        newItem.country === menuItem
-      );
+  searchFunc() {
+    api.get("/").then((res) => {
+      // Filtering by obj title
+      let dataSearch = res.data.filter((item) => {
+        return item.title
+          .toString()
+          .toLowerCase()
+          .includes(this.state.search.toString().toLowerCase());
+      });
+
+      this.setState({ dresses: dataSearch });
+      return dataSearch;
     });
-    setItems(newItem);
-  };
+  }
 
-  return (
-    <div>
-      <StyledMain>
-        <h3>Filter by</h3>
-        <h4>Category</h4>
-        <Buttons menuItems={categoryItems} />
-        <h4>Price</h4>
-        <Buttons menuItems={relPriceItems} />
-        <h4>Maker</h4>
-        <Buttons menuItems={countryItems} />
-      </StyledMain>
+  render() {
+    return (
+      <div>
+        <StyledMain>
+          <h3>Filter by</h3>
+          <h4>Category</h4>
+          {this.FilterButtons([
+            ...new Set(this.state.dresses?.map((item) => item.category)),
+          ])}
+          <h4>Price</h4>
+          {this.FilterButtons([
+            ...new Set(this.state.dresses?.map((item) => item.relPrice)),
+          ])}
+          <h4>Maker</h4>
+          {this.FilterButtons([
+            ...new Set(this.state.dresses?.map((item) => item.country)),
+          ])}
+        </StyledMain>
 
-      <StyledSearchBar>
-        <h3>Search</h3>
-        <span>
-          <Search
-            enterButton
-            placeholder="GENERIC, HANES"
-            size="large"
-            defaultValue={search}
-            onKeyDown={searchText.bind(this)}
-            onKeyUp={() => setItems(dataSearch)}
-          />
-        </span>
-      </StyledSearchBar>
+        <StyledSearchBar>
+          <h3>Search</h3>
+          <span>
+            <Search
+              enterButton
+              placeholder="ELESCAT, FOLUNSI"
+              size="large"
+              defaultValue={this.state.search}
+              onKeyDown={this.searchText.bind(this)}
+              onKeyUp={() => this.searchFunc()}
+            />
+          </span>
+        </StyledSearchBar>
 
-      <StyledCards>
-        <ul>
-          {items.map((item, indx) => (
-            <li key={indx}>
-              <CatalogCardItem
-                title={item.title}
-                text={item.text}
-                price={item.price}
-                imgSrc={item.image}
-                id={indx}
-              />
-            </li>
-          ))}
-        </ul>
-      </StyledCards>
-    </div>
-  );
-};
+        <StyledCards>
+          <ul>
+            {this.state.dresses.map((item, indx) => (
+              <li key={indx}>
+                <CatalogCardItem
+                  title={item.title}
+                  text={item.text}
+                  price={item.price}
+                  imgSrc={item.imageSrc}
+                  id={indx}
+                />
+              </li>
+            ))}
+          </ul>
+        </StyledCards>
+      </div>
+    );
+  }
+}
 
-export default SearchComp;
+export default withParams(SearchCompClass);

@@ -1,14 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
-import Home from "../Home/Home";
 import TopNavigationWrapper from "./Navigation.styled";
+import Home from "../Home/Home";
 import Catalog from "../Catalog/Catalog";
-import {
-  DokotooViewMorePage,
-  MoleraniViewMorePage,
-  BelongsciViewMorePage,
-  ElescatViewMorePage,
-} from "../ItemPage/ViewMoreItemPage";
+import ViewMorePage from "../ItemPage/ViewMoreItemPage";
 
 // Top nav
 const Navigation = () => {
@@ -54,10 +49,8 @@ const Navigation = () => {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
-        <Route path="/catalog/dokotoo" element={<DokotooViewMorePage />} />
-        <Route path="/catalog/molerani" element={<MoleraniViewMorePage />} />
-        <Route path="/catalog/belongsci" element={<BelongsciViewMorePage />} />
-        <Route path="/catalog/elescat" element={<ElescatViewMorePage />} />
+        {/* <Route path="/catalog/category/:category" element={<Catalog />} /> */}
+        <Route path="/catalog/:id" element={<ViewMorePage />} />
         <Route path="/cart" />
         <Route path="/" />
       </Routes>

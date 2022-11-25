@@ -4,13 +4,13 @@ import { Button } from "antd";
 import HomeCardItem from "../../components/CardItem/HomeCardItem";
 import { StyledMain, StyledCards, StyledLogo } from "./Home.styled";
 
-import headerImg from "../../icons/home/header.jpg";
-import dressImg from "../../icons/home/dress.jpg";
-import skirtImg from "../../icons/home/skirt.webp";
-import shirtImg from "../../icons/home/shirt.webp";
-import hatImg from "../../icons/home/hat.jpg";
-import coatImg from "../../icons/home/coat.webp";
-import jeansImg from "../../icons/home/jeans.png";
+import headerImg from "../../icons/header.jpg";
+import dressImg from "../../icons/dress.jpg";
+import skirtImg from "../../icons/skirt.webp";
+import shirtImg from "../../icons/shirt.webp";
+import hatImg from "../../icons/hat.jpg";
+import coatImg from "../../icons/coat.webp";
+import jeansImg from "../../icons/jeans.png";
 
 // Fake apis
 const homeClothes = [
