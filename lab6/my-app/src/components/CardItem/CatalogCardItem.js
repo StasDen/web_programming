@@ -4,8 +4,8 @@ import "antd/dist/antd.min.css"; // antd styles
 
 const { Meta } = Card;
 
-const CatalogCardItem = ({ title, text, price, imgSrc }) => {
-  const viewMoreSrc = `/catalog/${title.toLowerCase()}`;
+const CatalogCardItem = ({ id, title, text, price, imgSrc }) => {
+  const viewMoreSrc = `/catalog/${id + 1}`; // Id starting from '1'
 
   return (
     <Card

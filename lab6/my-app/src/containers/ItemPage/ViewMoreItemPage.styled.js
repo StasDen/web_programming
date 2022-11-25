@@ -15,7 +15,7 @@ export const StyledMain = styled.div`
 
   div {
     float: right;
-    margin-right: 400px;
+    margin-right: 500px;
   }
 
   h1 {
@@ -45,7 +45,7 @@ export const StyledSelect = styled.div`
   float: right;
   margin-right: 340px;
   position: relative;
-  bottom: 188px;
+  bottom: 262px;
 `;
 
 export const StyledPriceSection = styled.div`

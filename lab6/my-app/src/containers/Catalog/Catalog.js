@@ -2,7 +2,7 @@ import React from "react";
 import { StyledLogo } from "../Home/Home.styled";
 import { GitlabOutlined } from "@ant-design/icons";
 import BackToTopButton from "../../components/Button/BackToTopButton";
-import SearchComp from "../../components/Search/Search";
+import SearchCompClass from "../../components/Search/Search";
 import { StyledCatalogHeader, StyledSearch } from "./Catalog.styled";
 
 const Catalog = () => {
@@ -22,7 +22,7 @@ const Catalog = () => {
       </header>
 
       <StyledSearch>
-        <SearchComp />
+        <SearchCompClass />
       </StyledSearch>
 
       <section>
