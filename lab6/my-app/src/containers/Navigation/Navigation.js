@@ -4,6 +4,7 @@ import TopNavigationWrapper from "./Navigation.styled";
 import Home from "../Home/Home";
 import Catalog from "../Catalog/Catalog";
 import ViewMorePage from "../ItemPage/ViewMoreItemPage";
+import Cart from "../Cart/Cart";
 
 // Top nav
 const Navigation = () => {
@@ -49,9 +50,8 @@ const Navigation = () => {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
-        {/* <Route path="/catalog/category/:category" element={<Catalog />} /> */}
         <Route path="/catalog/:id" element={<ViewMorePage />} />
-        <Route path="/cart" />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/" />
       </Routes>
     </BrowserRouter>

@@ -4,6 +4,8 @@ import { StyledLogo } from "../Home/Home.styled";
 import { Select, Button } from "antd";
 import { withParams } from "../../components/Search/Search";
 import { api } from "../../components/Search/Search";
+import store from "../Cart/redux/store";
+import { addClothes, incrementTotal } from "../Cart/redux/actions";
 import {
   StyledMain,
   StyledSelect,
@@ -25,6 +27,21 @@ class ViewMorePage extends Component {
     api.get(`/${id}`).then((res) => {
       this.setState({ clothes: res.data });
     });
+  }
+
+  reduxAdd() {
+    store.subscribe(() => {
+      console.log("State changed", store.getState());
+    });
+
+    // this.state.clothes = {
+    //   ...this.state.clothes,
+    //   inCart: 1,
+    // };
+    store.dispatch(addClothes(this.state.clothes));
+    console.log(this.state.clothes);
+
+    store.dispatch(incrementTotal(this.state.clothes.price));
   }
 
   render() {
@@ -80,7 +97,10 @@ class ViewMorePage extends Component {
                 size="large"
                 shape="round"
                 type="primary"
-                href="/cart"
+                onClick={() => {
+                  this.reduxAdd();
+                  alert(`${this.state.clothes.title} added to Cart`);
+                }}
                 style={{ marginLeft: 32 }}
               >
                 Add to cart
