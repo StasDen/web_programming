@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import reducer, { numReducer, totalReducer } from "./reducer";
-
-import storage from "redux-persist/lib/storage";
+import { clothesReducer, totalReducer } from "./reducer";
 import { persistReducer } from "redux-persist";
 import { combineReducers } from "@reduxjs/toolkit";
+import storage from "redux-persist/lib/storage";
 
+// Development tools
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 
@@ -15,8 +15,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  reducer,
-  numReducer,
+  clothesReducer,
   totalReducer,
 });
 

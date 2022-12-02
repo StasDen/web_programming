@@ -13,6 +13,7 @@ export const addClothes = (clothes) => ({
     left: clothes.left,
     color: clothes.color,
     imageSrc: clothes.imageSrc,
+    inCart: clothes.inCart,
   },
 });
 
@@ -21,14 +22,6 @@ export const removeClothes = (id) => ({
   payload: {
     id,
   },
-});
-
-export const incrementNumber = () => ({
-  type: actions.NUMBER_INCREMENTED,
-});
-
-export const decrementNumber = () => ({
-  type: actions.NUMBER_DECREMENTED,
 });
 
 export const incrementTotal = (number) => ({

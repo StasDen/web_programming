@@ -21,12 +21,14 @@ export const StyledMain = styled.div`
     height: 300px;
     border-radius: 20px;
   }
+
   div {
     float: right;
     position: relative;
     right: 80px;
     top: 132px;
   }
+
   h3 {
     font-size: 32px;
     display: inline;

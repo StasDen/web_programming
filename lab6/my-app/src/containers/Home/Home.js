@@ -12,11 +12,6 @@ import hatImg from "../../icons/hat.jpg";
 import coatImg from "../../icons/coat.webp";
 import jeansImg from "../../icons/jeans.png";
 
-// Redux
-import store from "../Cart/reduxDEMO/store";
-import { bugAdded, bugRemoved, bugResolved } from "../Cart/reduxDEMO/actions";
-// Redux
-
 const homeClothes = [
   {
     title: "Skirts",
@@ -80,26 +75,6 @@ const moreHomeClothes = [
 const Home = () => {
   const [homeItems, setHomeItems] = useState(homeClothes);
   const [visible, setVisible] = useState(true);
-
-  // ====================== Redux ======================
-
-  // Running every time when state changes
-  const unsubscribe = store.subscribe(() => {
-    console.log("State has changed!", store.getState());
-  });
-
-  // Calling reducer
-  store.dispatch(bugAdded("Bug1"));
-
-  // Stopping subscription
-  unsubscribe();
-
-  store.dispatch(bugRemoved(1));
-
-  store.dispatch(bugResolved(0));
-
-  console.log(store.getState());
-  // ====================== Redux ======================
 
   return (
     <div>

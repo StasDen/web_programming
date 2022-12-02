@@ -3,20 +3,13 @@ import { StyledLogo } from "../Home/Home.styled";
 import { GitlabOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import { StyledHeader, StyledMain, StyledTotal } from "./Cart.styled";
+
 import store from "../Cart/redux/store";
 import { useSelector } from "react-redux";
-import {
-  removeClothes,
-  incrementNumber,
-  decrementNumber,
-  incrementTotal,
-  decrementTotal,
-} from "./redux/actions";
+import { removeClothes, incrementTotal, decrementTotal } from "./redux/actions";
 
 const Cart = () => {
-  const clothes = useSelector((state) => state.reducer); // getState()
-  const numberLeft = useSelector((state) => state.numReducer);
-  console.log(numberLeft);
+  const clothes = useSelector((state) => state.clothesReducer);
   const total = useSelector((state) => state.totalReducer);
 
   return (
@@ -54,7 +47,7 @@ const Cart = () => {
                     <h3>{item.title}</h3>
                     <Button
                       onClick={() => {
-                        store.dispatch(decrementNumber());
+                        item.inCart -= 1;
                         store.dispatch(decrementTotal(item.price));
                       }}
                       style={{
@@ -65,25 +58,22 @@ const Cart = () => {
                     >
                       -
                     </Button>
-                    {/* item.inCart */}
-                    <span>{numberLeft}</span>
+                    <span>{item.inCart}</span>
                     <Button
                       onClick={() => {
-                        store.dispatch(incrementNumber());
+                        item.inCart += 1;
                         store.dispatch(incrementTotal(item.price));
                       }}
                       style={{ fontWeight: "bold", marginLeft: 16 }}
                     >
                       +
                     </Button>
-                    <span id="item-price" style={{ marginLeft: 240 }}>
-                      {`$${item.price}`}
-                    </span>
+                    <span style={{ marginLeft: 240 }}>{`$${item.price}`}</span>
                   </div>
                 </section>
 
                 <picture>
-                  <img src={item.imageSrc} alt="clothes" />
+                  <img src={item.imageSrc} alt="cart clothes" />
                 </picture>
               </StyledMain>
             </li>

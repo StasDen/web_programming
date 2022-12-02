@@ -48,11 +48,11 @@ const Navigation = () => {
       </TopNavigationWrapper>
 
       <Routes>
+        <Route path="/" />
         <Route path="/home" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/catalog/:id" element={<ViewMorePage />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/" />
       </Routes>
     </BrowserRouter>
   );

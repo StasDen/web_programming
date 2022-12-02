@@ -1,6 +1,6 @@
 import * as actions from "./actionTypes";
 
-export default function reducer(state = [], action) {
+export function clothesReducer(state = [], action) {
   switch (action.type) {
     case actions.CLOTHES_ADDED:
       return [
@@ -16,21 +16,11 @@ export default function reducer(state = [], action) {
           left: action.payload.left,
           color: action.payload.color,
           imageSrc: action.payload.imageSrc,
+          inCart: action.payload.inCart,
         },
       ];
     case actions.CLOTHES_REMOVED:
       return state.filter((item) => item.id !== action.payload.id);
-    default:
-      return state;
-  }
-}
-
-export function numReducer(state = 1, action) {
-  switch (action.type) {
-    case actions.NUMBER_INCREMENTED:
-      return (state += 1);
-    case actions.NUMBER_DECREMENTED:
-      return (state -= 1);
     default:
       return state;
   }
