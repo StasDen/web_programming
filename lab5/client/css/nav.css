@@ -1,0 +1,19 @@
+.top-nav-list {
+  background-color: teal;
+  margin-bottom: 60px;
+}
+
+.top-nav-list li {
+  display: inline-block;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.top-nav-list li > a {
+  text-decoration: 0;
+  color: white;
+}
+
+.end-hr {
+  margin-bottom: 60px;
+}
